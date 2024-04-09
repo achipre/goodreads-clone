@@ -1,3 +1,4 @@
+import { Header } from "./components/Header/Header";
 import "./globals.css";
 
 export const metadata = {
@@ -11,7 +12,9 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/logo.svg" sizes="any" />
       </head>
-      <body className='bg-millbrook-50'>{children}</body>
+      <body className='bg-millbrook-50'>
+        <Header />
+        {children}</body>
     </html>
   );
 }
