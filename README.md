@@ -1,3 +1,4 @@
 Use:
 
 Tailwind
+Framer-motion

@@ -12,10 +12,30 @@ export const Logo = () => {
   )
 }
 
-export const IconUser = () => {
+export const IconUser = ({className}) => {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-      <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clipRule="evenodd" />
+    <svg className={className} fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="current-color" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5">
+        <path d="m12 12c2.7614 0 5-2.23858 5-5s-2.2386-5-5-5c-2.76142 0-5 2.23858-5 5s2.23858 5 5 5z"/>
+        <path d="m20.5899 22c0-3.87-3.85-7-8.59-7-4.73999 0-8.58999 3.13-8.58999 7"/>
+      </g>
+    </svg>
+  )
+}
+
+export const IconEmail = ({className}) => {
+  return (
+    <svg className={className} width={24} height={24} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="current-color">
+    <path d="M495.826,232a206.644,206.644,0,0,0-18.882-78.412,227.033,227.033,0,0,0-51.61-71.261C379.708,39.555,319.571,16,256,16A240,240,0,0,0,86.294,425.706a240,240,0,0,0,337.671,1.722l-22.4-22.856A206.824,206.824,0,0,1,256,464C141.309,464,48,370.691,48,256S141.309,48,256,48c112.748,0,208,87.925,208,192v36c0,28.673-25.122,52-56,52s-56-23.327-56-52V160H320v26.751a99.988,99.988,0,1,0,12.55,132.437C347.956,343.62,376.01,360,408,360c48.523,0,88-37.682,88-84V232ZM252,328a68,68,0,1,1,68-68A68.077,68.077,0,0,1,252,328Z"/>
+  </svg>
+  )
+}
+
+export const IconLock = ({className}) => {
+  return (
+    <svg className={className} width={24} height={24} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="current-color">
+      <path d="m17.44 9.33h-1.1v-2.93a4.34 4.34 0 0 0 -8.68 0v2.93h-1.1a2.5 2.5 0 0 0 -2.5 2.5v7.61a2.507 2.507 0 0 0 2.5 2.5h10.88a2.507 2.507 0 0 0 2.5-2.5v-7.61a2.5 2.5 0 0 0 -2.5-2.5zm-8.78-2.93a3.34 3.34 0 0 1 6.68 0v2.93h-6.68zm10.28 13.04a1.511 1.511 0 0 1 -1.5 1.5h-10.88a1.511 1.511 0 0 1 -1.5-1.5v-7.61a1.5 1.5 0 0 1 1.5-1.5h10.88a1.5 1.5 0 0 1 1.5 1.5z"/>
+      <path d="m13 14.95a.984.984 0 0 1 -.5.86v1.5a.5.5 0 0 1 -1 0v-1.5a.984.984 0 0 1 -.5-.86 1 1 0 0 1 2 0z"/>
     </svg>
   )
 }

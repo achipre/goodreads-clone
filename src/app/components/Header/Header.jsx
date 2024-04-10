@@ -1,13 +1,9 @@
 import Link from "next/link";
-import { Raleway } from "next/font/google";
-import { Poppins } from "next/font/google";
 import { Logo } from "@/assets/Icons";
 import { ButtonPrimary } from "../Buttons/buttonPrimary";
 import { ButtonSecondary } from "../Buttons/buttonSecondary";
+import { poppisLight, ralewayBold, ralewayLigth } from "@/assets/fonts";
 
-const ralewayLigth = Raleway({ subsets: ["latin"], weight: "100" });
-const ralewayBold = Raleway({ subsets: ["latin"], weight: "500" });
-const poppisLight = Poppins({ subsets: ["latin"], weight: "200" });
 
 export const Header = () => {
 	return (
@@ -29,9 +25,9 @@ export const Header = () => {
 				<span className={`${poppisLight.className} text-millbrook-900 text-xl sm:text-2xl`}>
 					|
 				</span>
-				<Link href='/log-in'
+				<Link href='/sign-in'
 				>
-					<ButtonSecondary title='Log In' />
+					<ButtonSecondary>Sign In</ButtonSecondary>
 				</Link>
 				<Link
 					href="/sign-up"
