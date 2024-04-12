@@ -5,7 +5,7 @@ import { Tag } from './components/Tag/tag'
 import { Category } from './components/Category/category'
 import { IconArrow } from '@/assets/Icons'
 
-export default function Home() {
+export default function Home () {
   return (
     <main className='px-3 sm:px-4 md:px-6 lg:px-8 xl:px-9'>
       <section className='flex flex-col md:flex-row gap-6 my-6 justify-center'>
@@ -30,8 +30,8 @@ export default function Home() {
               <Image className='aspect-video object-cover w-full sm:pr-0' src={article.Image} width={100} height={100} alt={article.Title} />
               <section className='flex flex-col xs:px-3 sm:px-0 sm:pr-0'>
                 <div className='flex gap-2 xs:gap-3 items-center'>
-                  <Category  className='sm:text-xs text-nowrap'>{article.Category}</Category>
-                  <Tag  className='sm:text-xs text-nowrap'>{article.Tag}</Tag>
+                  <Category className='sm:text-xs text-nowrap'>{article.Category}</Category>
+                  <Tag className='sm:text-xs text-nowrap'>{article.Tag}</Tag>
                   <p className={`${ralewayBold.className} inline-block text-xs xs:text-sm sm:hidden`}>{article.Date}</p>
                 </div>
                 <h1 className={`${maitreeBold.className} text-lg xs:text-xl sm:text-2xl leading-5 py-1 md:text-sm lg:text-xl`}>{article.Title}</h1>

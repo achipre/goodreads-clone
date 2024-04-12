@@ -1,22 +1,23 @@
 'use client'
 import Link from 'next/link'
+import { login } from '../auth/action'
 import { motion } from 'framer-motion'
-import { poppisBold, poppisLight, ralewayBold, ralewayLigth } from "@/assets/fonts";
-import { IconEmail, IconLock, SocialApple, SocialFacebook, SocialGoogle, SocialX } from "@/assets/Icons";
-import { InputPrimary } from "../components/Inputs/inputPrimary";
-import { ButtonPrimary } from "../components/Buttons/buttonPrimary";
+import { poppisLight, ralewayBold, ralewayLigth } from '@/assets/fonts'
+import { IconEmail, IconLock, SocialApple, SocialFacebook, SocialGoogle, SocialX } from '@/assets/Icons'
+import { InputPrimary } from '../components/Inputs/inputPrimary'
+import { ButtonPrimary } from '../components/Buttons/buttonPrimary'
 
 export default function SignIn () {
   return (
-    <motion.main initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1}} className="flex justify-center mt-16">
+    <motion.main initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="flex justify-center mt-16">
       <section className="flex flex-col items-center px-3 w-full max-w-md min-w-[288px]">
         <h2 className={`${ralewayLigth.className} text-4xl sm:text-5xl text-millbrook-900 [letter-spacing:-3px] text-nowrap`}>Sign <span className={`${ralewayBold.className}`}>In</span> </h2>
-        
+
         <form className="flex flex-col my-6 w-full">
           <InputPrimary className='mb-4 pl-10 w-full' type='email' placeholder={'Email'} icon={<IconEmail className='absolute p-[2px] top-0 translate-y-1/2 ml-2 fill-millbrook-900 pointer-events-none' />} />
           <InputPrimary className='pl-10 w-full' type='password' placeholder={'Password'} icon={<IconLock className='absolute top-0 translate-y-1/2 ml-2 fill-millbrook-900 pointer-events-none' />} />
           <p className={`${poppisLight.className} text-millbrook-900 underline cursor-pointer text-right mt-2 text-md xs:text-lg sm:text-xl`}>Forgot password?</p>
-          <ButtonPrimary className='mt-8 py-[10px]'>Sign In</ButtonPrimary>
+          <ButtonPrimary actionAuth={login} className='mt-8 py-[10px]'>Sign In</ButtonPrimary>
         </form>
         <div className="flex items-center gap-8 w-full">
           <span className="border-b w-full"></span>

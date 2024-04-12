@@ -12,7 +12,7 @@ export const Logo = () => {
   )
 }
 
-export const IconUser = ({className}) => {
+export const IconUser = ({ className }) => {
   return (
     <svg className={className} fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
       <g stroke="current-color" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5">
@@ -22,12 +22,12 @@ export const IconUser = ({className}) => {
     </svg>
   )
 }
-export const IconArrow = ({className}) => {
+export const IconArrow = ({ className }) => {
   return (
     <svg className={className} width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
         fill="#000000"
       />
@@ -35,7 +35,7 @@ export const IconArrow = ({className}) => {
   )
 }
 
-export const IconEmail = ({className}) => {
+export const IconEmail = ({ className }) => {
   return (
     <svg className={className} width={24} height={24} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="current-color">
     <path d="M495.826,232a206.644,206.644,0,0,0-18.882-78.412,227.033,227.033,0,0,0-51.61-71.261C379.708,39.555,319.571,16,256,16A240,240,0,0,0,86.294,425.706a240,240,0,0,0,337.671,1.722l-22.4-22.856A206.824,206.824,0,0,1,256,464C141.309,464,48,370.691,48,256S141.309,48,256,48c112.748,0,208,87.925,208,192v36c0,28.673-25.122,52-56,52s-56-23.327-56-52V160H320v26.751a99.988,99.988,0,1,0,12.55,132.437C347.956,343.62,376.01,360,408,360c48.523,0,88-37.682,88-84V232ZM252,328a68,68,0,1,1,68-68A68.077,68.077,0,0,1,252,328Z"/>
@@ -43,7 +43,7 @@ export const IconEmail = ({className}) => {
   )
 }
 
-export const IconLock = ({className}) => {
+export const IconLock = ({ className }) => {
   return (
     <svg className={className} width={24} height={24} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="current-color">
       <path d="m17.44 9.33h-1.1v-2.93a4.34 4.34 0 0 0 -8.68 0v2.93h-1.1a2.5 2.5 0 0 0 -2.5 2.5v7.61a2.507 2.507 0 0 0 2.5 2.5h10.88a2.507 2.507 0 0 0 2.5-2.5v-7.61a2.5 2.5 0 0 0 -2.5-2.5zm-8.78-2.93a3.34 3.34 0 0 1 6.68 0v2.93h-6.68zm10.28 13.04a1.511 1.511 0 0 1 -1.5 1.5h-10.88a1.511 1.511 0 0 1 -1.5-1.5v-7.61a1.5 1.5 0 0 1 1.5-1.5h10.88a1.5 1.5 0 0 1 1.5 1.5z"/>
@@ -52,7 +52,7 @@ export const IconLock = ({className}) => {
   )
 }
 
-export const SocialX = ({className}) => {
+export const SocialX = ({ className }) => {
   return (
     <svg className={className} width="48px" height="48px" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fillRule="evenodd" clipRule="evenodd" d="M50 100C77.6143 100 100 77.6143 100 50C100 22.3857 77.6143 0 50 0C22.3857 0 0 22.3857 0 50C0 77.6143 22.3857 100 50 100ZM73.8081 26H65.5239L51.8774 41.5945L40.085 26H23L43.4053 52.6949L24.0562 74.8136H32.3521L47.2778 57.7523L60.3379 74.8136H77L55.7144 46.6754L73.8081 26ZM67.2021 69.8618H62.6143L32.6572 30.6936H37.5854L67.2021 69.8618Z" fill="#523f31"/>
@@ -60,7 +60,7 @@ export const SocialX = ({className}) => {
   )
 }
 
-export const SocialApple = ({className}) => {
+export const SocialApple = ({ className }) => {
   return (
     <svg className={className} width="48px" height="48px" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fillRule="evenodd" clipRule="evenodd" d="M50 100C77.6143 100 100 77.6143 100 50C100 22.3857 77.6143 0 50 0C22.3857 0 0 22.3857 0 50C0 77.6143 22.3857 100 50 100ZM56.7661 75.4441C60.2974 76.9869 63.9658 77.5012 67.3262 74.2441L67.2915 74.2784C71.5088 70.5071 74.0459 65.3987 76 60.2559C66.1943 56.3131 63.6577 42.2222 74.3545 35.8109C71.7832 32.1082 67.8745 30.051 62.6973 29.6396C59.9395 29.4426 57.3633 30.3356 54.8086 31.2212C53.3613 31.7228 51.9209 32.222 50.458 32.5195C49.3101 32.4324 48.0693 31.9694 46.6685 31.4467C44.7646 30.7361 42.5645 29.915 39.8979 29.7767C20.9043 30.7367 18.436 56.9989 35.167 74.2441C38.1152 76.9526 40.7212 77.5697 45.6582 75.4441C49.6006 73.7983 53.0293 73.8669 56.7661 75.4441ZM50.1147 29.571C49.6006 21.9255 55.8062 15.6171 62.9375 15C63.9316 23.8455 54.915 30.4281 50.1147 29.571Z" fill="#523f31"/>
@@ -68,7 +68,7 @@ export const SocialApple = ({className}) => {
   )
 }
 
-export const SocialFacebook = ({className}) => {
+export const SocialFacebook = ({ className }) => {
   return (
     <svg className={className} width="48px" height="48px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fillRule="evenodd" clipRule="evenodd" d="M0 12.067C0 18.0335 4.33333 22.9944 10 24V15.3333H7V12H10V9.33332C10 6.33332 11.9333 4.66666 14.6667 4.66666C15.5333 4.66666 16.4667 4.79999 17.3333 4.93332V7.99999H15.8C14.3333 7.99999 14 8.73332 14 9.66666V12H17.2L16.6667 15.3333H14V24C19.6667 22.9944 24 18.0335 24 12.067C24 5.43017 18.6 0 12 0C5.4 0 0 5.43017 0 12.067Z" fill="#523f31"/>
@@ -76,11 +76,10 @@ export const SocialFacebook = ({className}) => {
   )
 }
 
-export const SocialGoogle = ({className}) => {
+export const SocialGoogle = ({ className }) => {
   return (
     <svg className={className} width="48px" height="48px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37246 0 0 5.37267 0 11.9998C0 18.6273 5.37246 24 12 24C18.6271 24 24 18.6274 24 11.9998C24 5.37267 18.6271 0 12 0ZM12.1402 19.0184C8.27229 19.0184 5.13943 15.8776 5.13943 11.9999C5.13943 8.12231 8.27229 4.98151 12.1402 4.98151C14.0305 4.98151 15.6097 5.67893 16.822 6.81071L14.8483 8.78908V8.78461C14.1134 8.08272 13.1815 7.72313 12.1402 7.72313C9.83 7.72313 7.95297 9.67945 7.95297 11.9957C7.95297 14.3114 9.83006 16.2725 12.1402 16.2725C14.2361 16.2725 15.6623 15.0706 15.9558 13.4213H12.1402V10.684H18.725C18.8126 11.1532 18.8605 11.6446 18.8605 12.1578C18.8605 16.1672 16.1831 19.0184 12.1402 19.0184Z" fill="#523f31"/>
     </svg>
   )
 }
-
