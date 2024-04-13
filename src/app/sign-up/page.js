@@ -20,7 +20,7 @@ export default function SignUp () {
         <h2 className={`${ralewayLigth.className} text-4xl sm:text-5xl text-millbrook-900 [letter-spacing:-3px] text-nowrap`}>Create <span className={`${ralewayBold.className}`}>Account</span> </h2>
         <FormProvider {...methods}>
 
-          <form onSubmit={methods.handleSubmit(onSubmit)} className="gap-2 max-w-md w-full">
+          <form onSubmit={methods.handleSubmit(onSubmit)} className="gap-2 max-w-md w-full" noValidate>
             <div className="my-6">
               <h2 className={`${poppisLight.className} text-2xl text-center`}>Join Us, Today</h2>
               <div className="flex gap-2 my-2 justify-center">
