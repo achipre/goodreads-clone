@@ -35,7 +35,7 @@ export default function SignUp () {
                 <span className="border-b w-full"></span>
               </div>
             </div>
-            <div className="flex gap-4 flex-col">
+            <div className="flex gap-6 flex-col">
               <InputPrimary className='pl-10 w-full' type='text' placeholder='Full Name' label='fullname' icon={<IconUser className='absolute p-[2px] top-0 translate-y-1/2 ml-2 stroke-millbrook-900 pointer-events-none' />}/>
               <InputPrimary className='pl-10 w-full' type='email' placeholder='Email' label='email' icon={<IconEmail className='absolute p-[2px] top-0 translate-y-1/2 ml-2 fill-millbrook-900 pointer-events-none' />} />
               <InputPrimary className='pl-10 w-full' type='password' placeholder='Password' label='password' icon={<IconLock className='absolute top-0 translate-y-1/2 ml-2 fill-millbrook-900 pointer-events-none' />}/>
