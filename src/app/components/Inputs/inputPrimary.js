@@ -9,13 +9,16 @@ export const InputPrimary = ({ type, placeholder, className, icon, label }) => {
   const errorTypeFullname = { required: true, minLength: 5 }
   const errorTypeEmail = { required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ }
   const errorTypePassword = { required: true, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ -/:-@\-`{-~]).{6,32}$/ }
+
+  console.log(getValues('repeatPassword'))
   return (
     <div className="relative">
       <input
-      className={`${poppisLight.className} w-96 bg-millbrook-100 py-3 px-4 box-border focus-visible:outline-none placeholder:text-md placeholder:xs:text-lg placeholder:sm:text-xl text-md xs:text-lg sm:text-xl ${className} ${(errors.fullname && label === 'fullname') ? 'border border-millbrook-700' : ''} ${(errors.email && label === 'email') ? 'border border-millbrook-700' : ''} ${(errors.password && label === 'password') ? 'border border-millbrook-700' : ''} ${(label === 'repeatPassword' && (watch('password') !== watch('repeatPassword')) && getValues('repeatPassword')) ? 'border border-millbrook-700' : ''}`}
+      className={`${poppisLight.className} w-96 bg-millbrook-100 py-3 px-4 box-border focus-visible:outline-none placeholder:text-md placeholder:xs:text-lg placeholder:sm:text-xl text-md xs:text-lg sm:text-xl ${className} ${(errors.fullname && label === 'fullname') ? 'border border-millbrook-700' : ''} ${(errors.email && label === 'email') ? 'border border-millbrook-700' : ''} ${(errors.password && label === 'password') ? 'border border-millbrook-700' : ''} ${(label === 'repeatPassword' && getValues('repeatPassword') === '') ? 'border border-millbrook-700' : ''} ${(label === 'repeatPassword' && (watch('password') !== watch('repeatPassword'))) ? 'border border-millbrook-700' : ''}`}
       {...register(label, label === 'fullname' && errorTypeFullname)}
       {...register(label, label === 'email' && errorTypeEmail)}
       {...register(label, label === 'password' && errorTypePassword)}
+      {...register(label, label === 'repeatPassword' && { required: true })}
       type={type}
       placeholder={placeholder} />
       {icon}
