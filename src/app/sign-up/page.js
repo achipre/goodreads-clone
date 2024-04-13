@@ -11,7 +11,7 @@ import { useForm, FormProvider } from 'react-hook-form'
 export default function SignUp () {
   const methods = useForm()
   const onSubmit = (data) => {
-    console.log(data)
+    signup(data)
   }
 
   return (
@@ -40,7 +40,7 @@ export default function SignUp () {
               <InputPrimary className='pl-10 w-full' type='email' placeholder='Email' label='email' icon={<IconEmail className='absolute p-[2px] top-0 translate-y-1/2 ml-2 fill-millbrook-900 pointer-events-none' />} />
               <InputPrimary className='pl-10 w-full' type='password' placeholder='Password' label='password' icon={<IconLock className='absolute top-0 translate-y-1/2 ml-2 fill-millbrook-900 pointer-events-none' />}/>
               <InputPrimary className='pl-10 w-full' type='password' placeholder='Repeat Password' label='repeatPassword' icon={<IconLock className='absolute top-0 translate-y-1/2 ml-2 fill-millbrook-900 pointer-events-none' />}/>
-              <ButtonPrimary type='submit' actionAuth={signup} className='py-2'>Sign Up</ButtonPrimary>
+              <ButtonPrimary type='submit' className='py-2'>Sign Up</ButtonPrimary>
             </div>
             <h2 className={`${poppisLight.className} text-lg text-center mt-4 text-md xs:text-lg sm:text-xl`}>Already a member? <Link href='/sign-in' className={`${poppisLight.className} cursor-pointer underline text-millbrook-600`}>Sign In</Link></h2>
           </form>
