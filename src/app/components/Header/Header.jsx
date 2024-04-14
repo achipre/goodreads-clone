@@ -4,18 +4,13 @@ import { ButtonPrimary } from '../Buttons/buttonPrimary'
 import { ButtonSecondary } from '../Buttons/buttonSecondary'
 import { poppisLight, ralewayBold, ralewayLigth } from '@/assets/fonts'
 import { createClient } from '@/utils/supabase/server'
-import { redirect } from 'next/navigation'
+import { signOut } from '@/app/auth/action'
 
 export const Header = async () => {
   const supabase = createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  const signOut = async () => {
-    'use server'
-    const supabase = createClient()
-    await supabase.auth.signOut()
-    redirect('/sign-in')
-  }
   console.log(user)
+
   return (
   <nav className="relative flex justify-between items-center py-4 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-9 min-w-72">
     <Link href={'/'} className="w-8 xs:w-9 sm:w-10 md:w-11 lg:w-12">

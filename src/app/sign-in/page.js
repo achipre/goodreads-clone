@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { login } from '../auth/action'
+import { login, signInWithOauth } from '../auth/action'
 import { motion } from 'framer-motion'
 import { poppisLight, ralewayBold, ralewayLigth } from '@/assets/fonts'
 import { IconEmail, IconLock, SocialApple, SocialFacebook, SocialGoogle, SocialX } from '@/assets/Icons'
@@ -13,6 +13,10 @@ export default function SignIn () {
   const onSubmit = (data) => {
     login(data)
   }
+  const handleGithub = () => {
+    signInWithOauth('github')
+  }
+
   return (
     <motion.main initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="flex justify-center mt-16">
       <section className="flex flex-col items-center px-3 w-full max-w-md min-w-[288px]">
@@ -36,7 +40,7 @@ export default function SignIn () {
         </div>
         <div className="flex gap-2 my-6 justify-center flex-wrap">
           <SocialGoogle className='cursor-pointer' />
-          <SocialApple className='cursor-pointer' />
+          <SocialApple handleGithub={handleGithub} className='cursor-pointer' />
           <SocialFacebook className='cursor-pointer' />
           <SocialX className='cursor-pointer' />
         </div>
