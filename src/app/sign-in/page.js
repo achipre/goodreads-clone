@@ -50,7 +50,9 @@ export default function SignIn () {
           </form>
           <SocialFacebook className='cursor-pointer' />
           <form action={handleTwitter}>
-            <SocialX className='cursor-pointer' />
+            <button>
+              <SocialX className='cursor-pointer' />
+            </button>
           </form>
         </div>
         <p className={`${poppisLight.className} text-center text-md xs:text-lg sm:text-xl`}>Are you new? <Link href='/sign-up' className={`${poppisLight.className} underline text-millbrook-600`}>Create Account</Link></p>
