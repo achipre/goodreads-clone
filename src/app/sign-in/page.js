@@ -19,6 +19,9 @@ export default function SignIn () {
   const handleTwitter = async () => {
     signInWithOauth('twitter')
   }
+  const handleGoogle = async () => {
+    signInWithOauth('twitter')
+  }
 
   return (
     <motion.main initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="flex justify-center mt-16">
@@ -42,7 +45,11 @@ export default function SignIn () {
           <span className="border-b w-full"></span>
         </div>
         <div className="flex gap-2 my-6 justify-center flex-wrap">
-          <SocialGoogle className='cursor-pointer' />
+          <form action={handleGoogle}>
+            <button>
+              <SocialGoogle className='cursor-pointer' />
+            </button>
+          </form>
           <form action={handleGithub}>
             <button>
               <SocialLinkedin className='cursor-pointer' />
