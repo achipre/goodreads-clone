@@ -16,6 +16,9 @@ export default function SignIn () {
   const handleGithub = async () => {
     signInWithOauth('github')
   }
+  const handleTwitter = async () => {
+    signInWithOauth('twitter')
+  }
 
   return (
     <motion.main initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="flex justify-center mt-16">
@@ -46,7 +49,9 @@ export default function SignIn () {
             </button>
           </form>
           <SocialFacebook className='cursor-pointer' />
-          <SocialX className='cursor-pointer' />
+          <form action={handleTwitter}>
+            <SocialX className='cursor-pointer' />
+          </form>
         </div>
         <p className={`${poppisLight.className} text-center text-md xs:text-lg sm:text-xl`}>Are you new? <Link href='/sign-up' className={`${poppisLight.className} underline text-millbrook-600`}>Create Account</Link></p>
       </section>

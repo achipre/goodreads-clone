@@ -13,6 +13,7 @@ export async function login (formData) {
     password: formData.passwordSignIn
   }
   const { error } = await supabase.auth.signInWithPassword(data)
+  console.log(error)
   if (error) {
     redirect('/error')
   }
