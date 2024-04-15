@@ -60,7 +60,7 @@ export const SocialX = ({ className }) => {
   )
 }
 
-export const SocialApple = ({ className, handleGithub }) => {
+export const SocialLinkedin = ({ className, handleGithub }) => {
   return (
 
     <svg onClick={handleGithub} className={className} width={48} height={48} version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"

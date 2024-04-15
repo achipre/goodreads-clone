@@ -9,7 +9,6 @@ import { signOut } from '@/app/auth/action'
 export const Header = async () => {
   const supabase = createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  console.log(user)
 
   return (
   <nav className="relative flex justify-between items-center py-4 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-9 min-w-72">

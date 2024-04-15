@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
 import { createClient } from '@/utils/supabase/server'
+import { headers } from 'next/headers'
 
 export async function login (formData) {
   const supabase = createClient()
@@ -36,14 +37,18 @@ export async function signup (formData) {
 }
 
 export async function signInWithOauth (provider) {
-  console.log(provider)
+  const origin = headers().get('origin')
   const supabase = createClient()
-  const { error } = await supabase.auth.signInWithOAuth({
-    provider
+  const { error, data } = await supabase.auth.signInWithOAuth({
+    provider,
+    options: {
+      redirectTo: `${origin}/auth/confirm`
+    }
   })
-
   if (error) {
     redirect('/error')
+  } else {
+    redirect(data.url)
   }
 }
 

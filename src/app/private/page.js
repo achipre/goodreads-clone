@@ -9,5 +9,13 @@ export default async function PrivatePage () {
     redirect('/sign-in')
   }
 
-  return <p>Hello {data.user.email}</p>
+  return (
+
+  <>
+  <p>Hello {data.user.email}</p>
+  <p>
+    <img src={data.user.user_metadata.avatar_url}/>
+  </p>
+  </>
+  )
 }

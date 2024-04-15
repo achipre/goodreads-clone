@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { login, signInWithOauth } from '../auth/action'
 import { motion } from 'framer-motion'
 import { poppisLight, ralewayBold, ralewayLigth } from '@/assets/fonts'
-import { IconEmail, IconLock, SocialApple, SocialFacebook, SocialGoogle, SocialX } from '@/assets/Icons'
+import { IconEmail, IconLock, SocialFacebook, SocialGoogle, SocialLinkedin, SocialX } from '@/assets/Icons'
 import { InputPrimary } from '../components/Inputs/inputPrimary'
 import { ButtonPrimary } from '../components/Buttons/buttonPrimary'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -13,7 +13,7 @@ export default function SignIn () {
   const onSubmit = (data) => {
     login(data)
   }
-  const handleGithub = () => {
+  const handleGithub = async () => {
     signInWithOauth('github')
   }
 
@@ -40,7 +40,11 @@ export default function SignIn () {
         </div>
         <div className="flex gap-2 my-6 justify-center flex-wrap">
           <SocialGoogle className='cursor-pointer' />
-          <SocialApple handleGithub={handleGithub} className='cursor-pointer' />
+          <form action={handleGithub}>
+            <button>
+              <SocialLinkedin className='cursor-pointer' />
+            </button>
+          </form>
           <SocialFacebook className='cursor-pointer' />
           <SocialX className='cursor-pointer' />
         </div>
