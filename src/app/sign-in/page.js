@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { login, signInWithOauth } from '../auth/action'
 import { motion } from 'framer-motion'
 import { poppisLight, ralewayBold, ralewayLigth } from '@/assets/fonts'
-import { IconEmail, IconLock, SocialFacebook, SocialGoogle, SocialLinkedin, SocialX } from '@/assets/Icons'
+import { IconEmail, IconLock, SocialFacebook, SocialGithub, SocialGoogle, SocialX } from '@/assets/Icons'
 import { InputPrimary } from '../components/Inputs/inputPrimary'
 import { ButtonPrimary } from '../components/Buttons/buttonPrimary'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -52,7 +52,7 @@ export default function SignIn () {
           </form>
           <form action={handleGithub}>
             <button>
-              <SocialLinkedin className='cursor-pointer' />
+              <SocialGithub className='cursor-pointer' />
             </button>
           </form>
           <SocialFacebook className='cursor-pointer' />
