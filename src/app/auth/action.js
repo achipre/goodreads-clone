@@ -40,6 +40,7 @@ export async function signup (formData) {
 export async function signInWithOauth (provider) {
   const origin = headers().get('origin')
   const supabase = createClient()
+  console.log(supabase)
   const { error, data } = await supabase.auth.signInWithOAuth({
     provider,
     options: {

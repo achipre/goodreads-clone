@@ -1,7 +1,7 @@
 'use client'
 import { InputPrimary } from '../components/Inputs/inputPrimary'
 import { ButtonPrimary } from '../components/Buttons/buttonPrimary'
-import { SocialFacebook, SocialGoogle, SocialX, IconUser, IconEmail, IconLock, SocialLinkedin } from '@/assets/Icons'
+import { SocialFacebook, SocialGoogle, SocialX, IconUser, IconEmail, IconLock, SocialGithub } from '@/assets/Icons'
 import { poppisLight, ralewayBold, ralewayLigth } from '@/assets/fonts'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -26,7 +26,7 @@ export default function SignUp () {
               <h2 className={`${poppisLight.className} text-2xl text-center`}>Join Us, Today</h2>
               <div className="flex gap-2 my-2 justify-center">
                 <SocialGoogle className='cursor-pointer' />
-                <SocialLinkedin className='cursor-pointer' />
+                <SocialGithub className='cursor-pointer' />
                 <SocialFacebook className='cursor-pointer' />
                 <SocialX className='cursor-pointer' />
               </div>
