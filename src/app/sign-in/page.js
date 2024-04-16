@@ -14,13 +14,13 @@ export default function SignIn () {
     login(data)
   }
   const handleGithub = async () => {
-    signInWithOauth('github')
+    signInWithOauth()
   }
   const handleTwitter = async () => {
-    signInWithOauth('twitter')
+    console.log('hola')
   }
   const handleGoogle = async () => {
-    signInWithOauth('twitter')
+    console.log('hola')
   }
 
   return (

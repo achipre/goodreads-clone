@@ -42,7 +42,7 @@ export async function signInWithOauth (provider) {
   const supabase = createClient()
   console.log(supabase)
   const { error, data } = await supabase.auth.signInWithOAuth({
-    provider,
+    provider: 'github',
     options: {
       redirectTo: `${origin}/auth/confirm`
     }
