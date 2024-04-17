@@ -2,7 +2,6 @@
 
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-
 import { createClient } from '@/utils/supabase/server'
 import { headers } from 'next/headers'
 
@@ -13,7 +12,6 @@ export async function login (formData) {
 
   const { error } = await supabase.auth.signInWithPassword({ email, password })
   if (error) {
-    console.log(error.message)
     redirect(`/sign-in?message=${error.message}`)
   }
   return redirect('/')
@@ -42,7 +40,6 @@ export async function signup (formData) {
 
 export async function signInWithOauth () {
   const origin = headers().get('origin')
-  console.log(headers().get())
   const supabase = createClient()
   const { error, data } = await supabase.auth.signInWithOAuth({
     provider: 'github',

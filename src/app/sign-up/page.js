@@ -9,7 +9,6 @@ import { signup } from '../auth/action'
 import { useForm, FormProvider } from 'react-hook-form'
 
 export default function SignUp ({ searchParams }) {
-  console.log(searchParams)
   const methods = useForm()
 
   const onSubmit = (data) => {
