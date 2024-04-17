@@ -3,12 +3,11 @@ import { Logo } from '@/assets/Icons'
 import { ButtonPrimary } from '../Buttons/buttonPrimary'
 import { ButtonSecondary } from '../Buttons/buttonSecondary'
 import { poppisLight, ralewayBold, ralewayLigth } from '@/assets/fonts'
-import { createClient } from '@/utils/supabase/server'
 import { signOut } from '@/app/auth/action'
+import { userConfirm } from '@/app/auth/userconfirm'
 
 export const Header = async () => {
-  const supabase = createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  const usuario = await userConfirm()
 
   return (
   <nav className="relative flex justify-between items-center py-4 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-9 min-w-72">
@@ -21,9 +20,9 @@ export const Header = async () => {
     </h1>
     <div className="flex gap-2 items-center">
       <span className={`${poppisLight.className} text-millbrook-900 text-xl sm:text-2xl`}>|</span>
-      {user
+      {usuario
         ? <form action={signOut}>
-            <button >Logout</button>
+            <ButtonSecondary>Logout</ButtonSecondary>
         </form>
         : <>
         <Link href="/sign-in">

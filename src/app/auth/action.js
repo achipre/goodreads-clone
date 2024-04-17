@@ -13,12 +13,9 @@ export async function login (formData) {
     password: formData.passwordSignIn
   }
   const { error } = await supabase.auth.signInWithPassword(data)
-  console.log(error)
   if (error) {
-    redirect('/error')
+    console.log('hola')
   }
-  revalidatePath('/', 'layout')
-  redirect('/')
 }
 
 export async function signup (formData) {
@@ -40,7 +37,6 @@ export async function signup (formData) {
 export async function signInWithOauth (provider) {
   const origin = headers().get('origin')
   const supabase = createClient()
-  console.log(supabase)
   const { error, data } = await supabase.auth.signInWithOAuth({
     provider: 'github',
     options: {

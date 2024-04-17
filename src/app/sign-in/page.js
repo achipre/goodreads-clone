@@ -7,8 +7,11 @@ import { IconEmail, IconLock, SocialFacebook, SocialGithub, SocialGoogle, Social
 import { InputPrimary } from '../components/Inputs/inputPrimary'
 import { ButtonPrimary } from '../components/Buttons/buttonPrimary'
 import { FormProvider, useForm } from 'react-hook-form'
+// import { userConfirm } from '../auth/userconfirm'
 
-export default function SignIn () {
+export default async function SignIn () {
+  // const usuario = await userConfirm()
+
   const methods = useForm()
   const onSubmit = (data) => {
     login(data)
@@ -34,7 +37,7 @@ export default function SignIn () {
             onSubmit={methods.handleSubmit(onSubmit)} noValidate>
             <InputPrimary className='pl-10 w-full' type='email' label='email' placeholder={'Email'} icon={<IconEmail className='absolute p-[2px] top-0 translate-y-1/2 ml-2 fill-millbrook-900 pointer-events-none' />} />
             <InputPrimary className='pl-10 w-full' type='password' label='passwordSignIn' placeholder={'Password'} icon={<IconLock className='absolute top-0 translate-y-1/2 ml-2 fill-millbrook-900 pointer-events-none' />} />
-            <p className={`${poppisLight.className} text-millbrook-900 underline cursor-pointer text-right text-md xs:text-lg -mt-5`}>Forgot password?</p>
+            <Link href='/forgot-password' className={`${poppisLight.className} text-millbrook-900 underline cursor-pointer text-right text-md xs:text-lg -mt-5`}>Forgot password?</Link>
             <ButtonPrimary className='py-[10px]'>Sign In</ButtonPrimary>
           </form>
         </FormProvider>
