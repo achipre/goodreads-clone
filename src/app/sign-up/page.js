@@ -8,7 +8,8 @@ import Link from 'next/link'
 import { signup } from '../auth/action'
 import { useForm, FormProvider } from 'react-hook-form'
 
-export default function SignUp () {
+export default function SignUp ({ searchParams }) {
+  console.log(searchParams)
   const methods = useForm()
 
   const onSubmit = (data) => {
@@ -21,7 +22,7 @@ export default function SignUp () {
         <h2 className={`${ralewayLigth.className} text-4xl sm:text-5xl text-millbrook-900 [letter-spacing:-3px] text-nowrap`}>Create <span className={`${ralewayBold.className}`}>Account</span> </h2>
         <FormProvider {...methods}>
 
-          <form onSubmit={methods.handleSubmit(onSubmit)} className="gap-2 max-w-md w-full" noValidate>
+          <form onSubmit={methods.handleSubmit(onSubmit)} className="gap-2 max-w-md w-full" >
             <div className="my-6">
               <h2 className={`${poppisLight.className} text-2xl text-center`}>Join Us, Today</h2>
               <div className="flex gap-2 my-2 justify-center">
@@ -42,6 +43,9 @@ export default function SignUp () {
               <InputPrimary className='pl-10 w-full' type='password' placeholder='Password' label='password' icon={<IconLock className='absolute top-0 translate-y-1/2 ml-2 fill-millbrook-900 pointer-events-none' />}/>
               <InputPrimary className='pl-10 w-full' type='password' placeholder='Repeat Password' label='repeatPassword' icon={<IconLock className='absolute top-0 translate-y-1/2 ml-2 fill-millbrook-900 pointer-events-none' />}/>
               <ButtonPrimary type='submit' className='py-2'>Sign Up</ButtonPrimary>
+              { searchParams.message &&
+                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className={`${ralewayBold.className} bg-millbrook-100 text-center py-4 text-xl`}>{searchParams.message}</motion.p>
+              }
             </div>
             <h2 className={`${poppisLight.className} text-lg text-center mt-4 text-md xs:text-lg sm:text-xl`}>Already a member? <Link href='/sign-in' className={`${poppisLight.className} cursor-pointer underline text-millbrook-600`}>Sign In</Link></h2>
           </form>

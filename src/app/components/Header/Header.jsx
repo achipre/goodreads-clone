@@ -25,7 +25,7 @@ export const Header = async () => {
             <ButtonSecondary>Logout</ButtonSecondary>
         </form>
         : <>
-        <Link href="/sign-in">
+        <Link href="/sign-in" >
           <ButtonSecondary>Sign In</ButtonSecondary>
         </Link>
         <Link href="/sign-up">

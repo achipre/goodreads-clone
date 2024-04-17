@@ -8,34 +8,41 @@ import { headers } from 'next/headers'
 
 export async function login (formData) {
   const supabase = createClient()
-  const data = {
-    email: formData.email,
-    password: formData.passwordSignIn
-  }
-  const { error } = await supabase.auth.signInWithPassword(data)
+  const email = formData.email
+  const password = formData.password
+
+  const { error } = await supabase.auth.signInWithPassword({ email, password })
   if (error) {
-    console.log('hola')
+    console.log(error.message)
+    redirect(`/sign-in?message=${error.message}`)
   }
+  return redirect('/')
 }
 
 export async function signup (formData) {
+  const origin = headers().get('origin')
   const supabase = createClient()
-  const data = {
-    email: formData.email,
-    password: formData.password
-  }
+  const email = formData.email
+  const password = formData.password
 
-  const { error } = await supabase.auth.signUp(data)
+  const { error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      emailRedirectTo: `${origin}/auth/confirm`
+    }
+  })
 
   if (error) {
-    redirect('/error')
+    redirect('/sign-up?message=Could not authenticate user')
   }
   revalidatePath('/', 'layout')
-  redirect('/')
+  redirect(`/confirm?message=${formData.email}`)
 }
 
-export async function signInWithOauth (provider) {
+export async function signInWithOauth () {
   const origin = headers().get('origin')
+  console.log(headers().get())
   const supabase = createClient()
   const { error, data } = await supabase.auth.signInWithOAuth({
     provider: 'github',

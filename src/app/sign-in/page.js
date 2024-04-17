@@ -8,7 +8,7 @@ import { InputPrimary } from '../components/Inputs/inputPrimary'
 import { ButtonPrimary } from '../components/Buttons/buttonPrimary'
 import { FormProvider, useForm } from 'react-hook-form'
 
-export default async function SignIn () {
+export default async function SignIn ({ searchParams }) {
   const methods = useForm()
   const onSubmit = (data) => {
     login(data)
@@ -36,6 +36,9 @@ export default async function SignIn () {
             <InputPrimary className='pl-10 w-full' type='password' label='passwordSignIn' placeholder={'Password'} icon={<IconLock className='absolute top-0 translate-y-1/2 ml-2 fill-millbrook-900 pointer-events-none' />} />
             <Link href='/forgot-password' className={`${poppisLight.className} text-millbrook-900 underline cursor-pointer text-right text-md xs:text-lg -mt-5`}>Forgot password?</Link>
             <ButtonPrimary className='py-[10px]'>Sign In</ButtonPrimary>
+            { searchParams.message &&
+                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className={`${ralewayBold.className} bg-millbrook-100 text-center py-4 text-xl`}>{searchParams.message}</motion.p>
+              }
           </form>
         </FormProvider>
 
