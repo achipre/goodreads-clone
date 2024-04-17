@@ -7,11 +7,8 @@ import { IconEmail, IconLock, SocialFacebook, SocialGithub, SocialGoogle, Social
 import { InputPrimary } from '../components/Inputs/inputPrimary'
 import { ButtonPrimary } from '../components/Buttons/buttonPrimary'
 import { FormProvider, useForm } from 'react-hook-form'
-// import { userConfirm } from '../auth/userconfirm'
 
 export default async function SignIn () {
-  // const usuario = await userConfirm()
-
   const methods = useForm()
   const onSubmit = (data) => {
     login(data)

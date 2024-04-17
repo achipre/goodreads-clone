@@ -6,7 +6,7 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { ButtonPrimary } from '../components/Buttons/buttonPrimary'
 import { IconEmail } from '@/assets/Icons'
 import { motion } from 'framer-motion'
-export default function ForgotPassword ({ searchParams, userConfirm }) {
+export default function ForgotPassword ({ searchParams }) {
   const methods = useForm()
 
   return (

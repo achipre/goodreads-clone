@@ -4,7 +4,7 @@ import { ButtonPrimary } from '../Buttons/buttonPrimary'
 import { ButtonSecondary } from '../Buttons/buttonSecondary'
 import { poppisLight, ralewayBold, ralewayLigth } from '@/assets/fonts'
 import { signOut } from '@/app/auth/action'
-import { userConfirm } from '@/app/auth/userconfirm'
+import { userConfirm } from '@/app/auth/userConfirm'
 
 export const Header = async () => {
   const usuario = await userConfirm()
