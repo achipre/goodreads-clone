@@ -6,15 +6,20 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { ButtonPrimary } from '../components/Buttons/buttonPrimary'
 import { IconEmail } from '@/assets/Icons'
 import { motion } from 'framer-motion'
+import { forgotPassword } from '../auth/forgotmail'
 export default function ForgotPassword ({ searchParams }) {
   const methods = useForm()
+
+  const onForgot = (data) => {
+    forgotPassword(data)
+  }
 
   return (
   <motion.main initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} >
       <div className="sm:max-w-md mx-auto mt-16 flex flex-col items-center px-3 w-full max-w-md min-w-[288px]">
       <FormProvider {...methods}>
         <form
-          onSubmit={methods.handleSubmit()} noValidate
+          onSubmit={methods.handleSubmit(onForgot)} noValidate
           className="flex flex-col w-full justify-center gap-6 text-foreground my-6">
           <h2 className={`${ralewayLigth.className} text-4xl sm:text-5xl text-millbrook-900 [letter-spacing:-3px] text-nowrap text-center`}>Forgot <span className={`${ralewayBold.className}`}>Email</span> </h2>
           <InputPrimary

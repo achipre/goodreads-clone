@@ -30,6 +30,7 @@ export async function signup (formData) {
       emailRedirectTo: `${origin}/auth/confirm`
     }
   })
+  console.log(error)
 
   if (error) {
     redirect('/sign-up?message=Could not authenticate user')
