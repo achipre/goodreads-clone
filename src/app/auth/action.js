@@ -8,13 +8,14 @@ import { headers } from 'next/headers'
 export async function login (formData) {
   const supabase = createClient()
   const email = formData.email
-  const password = formData.password
-
-  const { error } = await supabase.auth.signInWithPassword({ email, password })
+  const password = formData.passwordSignIn
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password })
   if (error) {
     redirect(`/sign-in?message=${error.message}`)
   }
-  return redirect('/')
+  if (data.user) {
+    return redirect('/')
+  }
 }
 
 export async function signup (formData) {
@@ -30,8 +31,6 @@ export async function signup (formData) {
       emailRedirectTo: `${origin}/auth/confirm`
     }
   })
-  console.log(error)
-
   if (error) {
     redirect('/sign-up?message=Could not authenticate user')
   }
@@ -58,8 +57,6 @@ export async function signInWithOauth () {
 export async function signOut () {
   const supabase = createClient()
   const { error } = await supabase.auth.signOut()
-  if (error) {
-    redirect('/error')
-  }
-  redirect('/sign-in')
+  console.log(error)
+  return redirect('/sign-in')
 }

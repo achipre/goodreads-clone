@@ -3,12 +3,16 @@ import { Logo } from '@/assets/Icons'
 import { ButtonPrimary } from '../Buttons/buttonPrimary'
 import { ButtonSecondary } from '../Buttons/buttonSecondary'
 import { poppisLight, ralewayBold, ralewayLigth } from '@/assets/fonts'
+// import { userConfirm } from '@/app/auth/userConfirm'
 import { signOut } from '@/app/auth/action'
-import { userConfirm } from '@/app/auth/userConfirm'
 
-export const Header = async () => {
-  const usuario = await userConfirm()
+export const Header = () => {
+  const logout = () => {
+    signOut()
+  }
 
+  const info = 5 > 1
+  // const usuario = userConfirm()
   return (
   <nav className="relative flex justify-between items-center py-4 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-9 min-w-72">
     <Link href={'/'} className="w-8 xs:w-9 sm:w-10 md:w-11 lg:w-12">
@@ -20,10 +24,8 @@ export const Header = async () => {
     </h1>
     <div className="flex gap-2 items-center">
       <span className={`${poppisLight.className} text-millbrook-900 text-xl sm:text-2xl`}>|</span>
-      {usuario
-        ? <form action={signOut}>
-            <ButtonSecondary>Logout</ButtonSecondary>
-        </form>
+      {info
+        ? <ButtonSecondary logout={logout} >Logout</ButtonSecondary>
         : <>
         <Link href="/sign-in" >
           <ButtonSecondary>Sign In</ButtonSecondary>
@@ -32,7 +34,6 @@ export const Header = async () => {
           <ButtonPrimary>Sign Up</ButtonPrimary>
         </Link>
         </>
-
       }
     </div>
   </nav>

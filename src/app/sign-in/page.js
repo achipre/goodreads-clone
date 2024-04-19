@@ -8,18 +8,18 @@ import { InputPrimary } from '../components/Inputs/inputPrimary'
 import { ButtonPrimary } from '../components/Buttons/buttonPrimary'
 import { FormProvider, useForm } from 'react-hook-form'
 
-export default async function SignIn ({ searchParams }) {
+export default async function SignIn () {
   const methods = useForm()
   const onSubmit = (data) => {
     login(data)
   }
-  const handleGithub = async () => {
+  const handleGithub = () => {
     signInWithOauth()
   }
-  const handleTwitter = async () => {
+  const handleTwitter = () => {
     console.log('hola')
   }
-  const handleGoogle = async () => {
+  const handleGoogle = () => {
     console.log('hola')
   }
 
@@ -36,9 +36,9 @@ export default async function SignIn ({ searchParams }) {
             <InputPrimary className='pl-10 w-full' type='password' label='passwordSignIn' placeholder={'Password'} icon={<IconLock className='absolute top-0 translate-y-1/2 ml-2 fill-millbrook-900 pointer-events-none' />} />
             <Link href='/forgot-password' className={`${poppisLight.className} text-millbrook-900 underline cursor-pointer text-right text-md xs:text-lg -mt-5`}>Forgot password?</Link>
             <ButtonPrimary className='py-[10px]'>Sign In</ButtonPrimary>
-            { searchParams.message &&
+            {/* { searchParams.message &&
                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className={`${ralewayBold.className} bg-millbrook-100 text-center py-4 text-xl`}>{searchParams.message}</motion.p>
-              }
+              } */}
           </form>
         </FormProvider>
 
