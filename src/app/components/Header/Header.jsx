@@ -3,16 +3,25 @@ import { Logo } from '@/assets/Icons'
 import { ButtonPrimary } from '../Buttons/buttonPrimary'
 import { ButtonSecondary } from '../Buttons/buttonSecondary'
 import { poppisLight, ralewayBold, ralewayLigth } from '@/assets/fonts'
-// import { userConfirm } from '@/app/auth/userConfirm'
-import { signOut } from '@/app/auth/action'
+import { createClient } from '@/utils/supabase/server'
+import { redirect } from 'next/navigation'
 
-export const Header = () => {
-  const logout = () => {
-    signOut()
+export const Header = async () => {
+  const signOut = async () => {
+    'use server'
+    const supabase = createClient()
+    const { error } = await supabase.auth.signOut()
+    if (error) {
+      redirect('/error')
+    } else {
+      return redirect('/sign-in')
+    }
   }
 
-  const info = 5 > 1
-  // const usuario = userConfirm()
+  const supabase = createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  console.log('------------user', user)
+
   return (
   <nav className="relative flex justify-between items-center py-4 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-9 min-w-72">
     <Link href={'/'} className="w-8 xs:w-9 sm:w-10 md:w-11 lg:w-12">
@@ -24,17 +33,18 @@ export const Header = () => {
     </h1>
     <div className="flex gap-2 items-center">
       <span className={`${poppisLight.className} text-millbrook-900 text-xl sm:text-2xl`}>|</span>
-      {info
-        ? <ButtonSecondary logout={logout} >Logout</ButtonSecondary>
-        : <>
+      { user && <form action={signOut}>
+          <ButtonSecondary >Sign out</ButtonSecondary>
+        </form>
+      }
+      {!user && <>
         <Link href="/sign-in" >
           <ButtonSecondary>Sign In</ButtonSecondary>
         </Link>
         <Link href="/sign-up">
           <ButtonPrimary>Sign Up</ButtonPrimary>
         </Link>
-        </>
-      }
+        </>}
     </div>
   </nav>
   )

@@ -55,8 +55,8 @@ export async function signInWithOauth () {
 }
 
 export async function signOut () {
+  'use server'
   const supabase = createClient()
-  const { error } = await supabase.auth.signOut()
-  console.log(error)
+  await supabase.auth.signOut()
   return redirect('/sign-in')
 }
